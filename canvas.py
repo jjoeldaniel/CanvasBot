@@ -3,6 +3,7 @@ from canvasapi import Canvas
 # Canvas API URL
 _API_URL = "https://canvas.instructure.com/"
 
+
 def test_key(api_key):
     """Tests Canvas API key
         Will throw InvalidAccessToken exception if invalid"""
@@ -49,4 +50,4 @@ def search_course(api_key, query):
         if query.lower() in str(course.name).lower():
             courses.append(course)
 
-    return 
+    return

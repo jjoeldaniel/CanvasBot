@@ -28,7 +28,8 @@ def get_api_key(guild_id):
     try:
         with con:
             cur = con.cursor()
-            cur.execute(f"SELECT api_key FROM keys WHERE guild_id = {guild_id}")
+            cur.execute(
+                f"SELECT api_key FROM keys WHERE guild_id = {guild_id}")
 
         return cur.fetchone()[0]
     except (AttributeError, TypeError):
@@ -56,7 +57,8 @@ async def on_ready():
     con = sqlite3.connect("bot.db")
     with con:
         cur = con.cursor()
-        cur.execute("CREATE TABLE IF NOT EXISTS keys(guild_id int UNIQUE, api_key string, class_name string)")
+        cur.execute(
+            "CREATE TABLE IF NOT EXISTS keys(guild_id int UNIQUE, api_key string, class_name string)")
     con.close()
 
 
@@ -85,6 +87,7 @@ async def on_message(message):
     elif user_message.lower() == ".help":
         await _help(message)
 
+
 async def _register(message, key):
     """Register (register API key)"""
 
@@ -108,6 +111,7 @@ async def _register(message, key):
 
     con.close()
     await message.channel.send(embed=simple_embed("API key registered!"))
+
 
 async def _set_course(message, query):
     """Set Guild-Canvas course"""
@@ -146,6 +150,7 @@ async def _set_course(message, query):
 
     await message.channel.send(embed=simple_embed(f"Course set as {course}"))
 
+
 async def _search(message, query):
     """Search (returns matching course name)"""
 
@@ -170,7 +175,8 @@ async def _search(message, query):
     for course in courses:
         search_results += course.name + "\n\n"
 
-    embed = discord.Embed(title=f"Found `{len(courses)}` courses containing: **{query}**", color=0x00000)
+    embed = discord.Embed(
+        title=f"Found `{len(courses)}` courses containing: **{query}**", color=0x00000)
     embed.set_author(
         name=client.user.display_name, icon_url=client.user.avatar)
     embed.description = search_results
@@ -179,11 +185,13 @@ async def _search(message, query):
 
     await message.channel.send(embed=embed)
 
+
 async def _help(message):
     """Returns list of commands"""
 
     embed = discord.Embed(title="Commands List", color=0x00000)
-    embed.set_author(name=client.user.display_name, icon_url=client.user.avatar)
+    embed.set_author(name=client.user.display_name,
+                     icon_url=client.user.avatar)
     embed.description = (f"`.register (api_key)` Registers your Canvas API key with the bot."
                          f" This step is required for the bot to function.\n\n"
                          f"`.courses` Intended for use during setup to list all possible "
@@ -195,6 +203,7 @@ async def _help(message):
                          f"`.assignments` Lists all assignments for paired course")
 
     await message.channel.send(embed=embed)
+
 
 async def _assignments(message):
     """List assignments"""
@@ -215,7 +224,8 @@ async def _assignments(message):
     con = sqlite3.connect("bot.db")
     with con:
         cur = con.cursor()
-        cur.execute(f"SELECT class_name FROM keys WHERE guild_id = {message.guild.id}")
+        cur.execute(
+            f"SELECT class_name FROM keys WHERE guild_id = {message.guild.id}")
         course_name = cur.fetchone()[0]
     con.close()
 
@@ -231,6 +241,7 @@ async def _assignments(message):
         assignment_message += (assignment + "\n\n")
 
     await message.channel.send(assignment_message)
+
 
 async def _courses(message):
     """Lists all enrolled Canvas classes with guild API key"""

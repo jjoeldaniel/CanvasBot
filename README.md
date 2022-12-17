@@ -8,6 +8,8 @@ Go to:
 
 ## Features
 
+ - List all publically available assignments for a Canvas course
+
 ## Commands
 
 | Command                    | Description                                                                                 |

@@ -11,7 +11,7 @@ Go to:
 
 | Command | Description |
 | ------- | ----------- |
-| `/register (api_key)` | Registers your Canvas API key with the bot |
+| `.register (api_key)` | Registers your Canvas API key with the bot |
 |`.courses` |Intended for use during setup to list all possible Canvas courses for the bot to pair with.|
 |`.search (query)`| Intended for use during setup to search for a Canvas course to pair the bot pair with.|
 |`.setcourse (course_name)`| This command pairs the bot with your Canvas class|

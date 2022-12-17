@@ -5,10 +5,10 @@ import sqlite3
 from dotenv import load_dotenv
 from canvas import *
 
-# Libraries I installed:
+# Libraries:
 # pip install -U discord.py
 # pip install python-dotenv
-# pip install discord.ext.context <- haven't used this library
+# pip install canvasapi
 
 load_dotenv()
 

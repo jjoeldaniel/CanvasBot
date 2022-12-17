@@ -1,8 +1,5 @@
 from canvasapi import Canvas
 
-# To install CanvasAPI (https://github.com/ucfopen/canvasapi)
-# pip install canvasapi
-
 # Canvas API URL
 _API_URL = "https://canvas.instructure.com/"
 

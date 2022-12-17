@@ -261,4 +261,5 @@ async def _courses(message):
 
     await message.channel.send(embed=embed)
 
-client.run(token)
+if __name__ == "__main__":
+    client.run(token)

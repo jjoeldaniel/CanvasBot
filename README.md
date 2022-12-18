@@ -5,7 +5,8 @@
 Go to:
 [Features](#features),
 [Setup](#setup),
-[Commands](#commands)
+[Commands](#commands),
+[References](#references)
 
 ## Features
 
@@ -30,3 +31,9 @@ Go to:
 | `.search (query)`          | Search for a Canvas course to pair the bot pair with.      |
 | `.setcourse (course_name)` | Pairs the bot with your Canvas class                                           |
 | `.assignments`             | Lists all assignments for paired course                                                     |
+
+## References
+
+- [CanvasAPI](https://github.com/ucfopen/canvasapi)
+- [discord.py](https://discordpy.readthedocs.io/en/stable/)
+- [python-dotenv](https://discordpy.readthedocs.io/en/stable/)

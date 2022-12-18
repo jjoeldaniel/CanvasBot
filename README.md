@@ -17,9 +17,9 @@ Go to:
 
 1) Install necessary dependencies with `pip install -r requirements.txt`
 
-2) Create a `.env` file in the main directory (copy the template provided in [.env.example](.env.example)
+2) Create a `.env` file in the main directory (copy the template provided in [.env.example](.env.example))
 
-3) Start the bot
+3) Run
 
 ## Commands
 

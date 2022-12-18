@@ -1,6 +1,6 @@
 # CanvasBot
 
-    A Discord bot meant to integrate with your Canvas class!
+> A Discord bot meant to integrate with your Canvas class!
 
 Go to:
 [Features](#features),
